@@ -1,0 +1,1061 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Europe Heatwave Relief Hub | Stay Cool in Extreme Heat 2026</title>
+    <meta name="description" content="Complete guide to surviving the 2026 European heatwave: no-AC cooling tips, school closure rules, power outage prep, heat health advice, and natural remedies. Updated daily.">
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+
+        :root {
+            --ice-1: #e0f7fa;
+            --ice-2: #b2ebf2;
+            --ice-3: #80deea;
+            --ice-4: #4dd0e1;
+            --ice-5: #26c6da;
+            --ice-6: #00bcd4;
+            --ice-7: #00acc1;
+            --ice-8: #0097a7;
+            --ice-9: #00838f;
+            --ice-10: #006064;
+            --glass: rgba(255, 255, 255, 0.25);
+            --glass-border: rgba(255, 255, 255, 0.4);
+            --shadow: 0 8px 32px rgba(0, 150, 170, 0.15);
+            --alert-red: #ef4444;
+            --alert-orange: #f97316;
+            --alert-yellow: #eab308;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Helvetica Neue", Arial, sans-serif;
+            background: linear-gradient(135deg, #e0f7fa 0%, #b2ebf2 25%, #80deea 50%, #b2ebf2 75%, #e0f7fa 100%);
+            background-size: 400% 400%;
+            animation: gradientShift 15s ease infinite;
+            color: var(--ice-10);
+            min-height: 100vh;
+            overflow-x: hidden;
+            line-height: 1.6;
+        }
+
+        @keyframes gradientShift {
+            0% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+            100% { background-position: 0% 50%; }
+        }
+
+        /* Background decorations */
+        #bubbles {
+            position: fixed; top: 0; left: 0;
+            width: 100%; height: 100%;
+            pointer-events: none; z-index: 0;
+            overflow: hidden;
+        }
+        .bubble {
+            position: absolute; bottom: -100px;
+            background: radial-gradient(circle at 30% 30%, rgba(255,255,255,0.8), rgba(255,255,255,0.1));
+            border-radius: 50%;
+            animation: rise linear infinite;
+            box-shadow: inset 0 0 10px rgba(255,255,255,0.5);
+        }
+        @keyframes rise {
+            0% { transform: translateY(0) scale(1); opacity: 0; }
+            10% { opacity: 1; }
+            90% { opacity: 1; }
+            100% { transform: translateY(-120vh) scale(1.2); opacity: 0; }
+        }
+        .glow {
+            position: fixed; border-radius: 50%;
+            filter: blur(60px); pointer-events: none; z-index: 0;
+            animation: pulseGlow 4s ease-in-out infinite;
+        }
+        .glow-1 { width: 200px; height: 200px; background: rgba(128,222,234,0.4); top: 10%; left: 5%; }
+        .glow-2 { width: 250px; height: 250px; background: rgba(178,235,242,0.35); bottom: 15%; right: 8%; animation-delay: 1s; }
+        .glow-3 { width: 150px; height: 150px; background: rgba(224,247,250,0.5); top: 50%; left: 30%; animation-delay: 2s; }
+        @keyframes pulseGlow {
+            0%, 100% { transform: scale(1); opacity: 0.6; }
+            50% { transform: scale(1.2); opacity: 0.9; }
+        }
+
+        /* Navigation */
+        nav {
+            position: fixed; top: 0; width: 100%;
+            background: var(--glass);
+            backdrop-filter: blur(20px);
+            border-bottom: 1px solid var(--glass-border);
+            z-index: 1000;
+            padding: 1rem 2rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            transition: box-shadow 0.3s;
+        }
+        nav.scrolled { box-shadow: 0 4px 20px rgba(0,150,170,0.1); }
+        .logo {
+            font-size: 1.4rem; font-weight: 800;
+            background: linear-gradient(135deg, var(--ice-8), var(--ice-5));
+            -webkit-background-clip: text; -webkit-text-fill-color: transparent;
+            display: flex; align-items: center; gap: 0.5rem;
+        }
+        .logo-icon { -webkit-text-fill-color: initial; font-size: 1.6rem; }
+        .nav-links { display: flex; gap: 1.5rem; list-style: none; }
+        .nav-links a {
+            text-decoration: none; color: var(--ice-9);
+            font-weight: 500; font-size: 0.9rem;
+            transition: all 0.3s; position: relative;
+        }
+        .nav-links a::after {
+            content: ""; position: absolute;
+            bottom: -4px; left: 0; width: 0; height: 2px;
+            background: var(--ice-5); transition: width 0.3s;
+        }
+        .nav-links a:hover::after { width: 100%; }
+        .nav-links a:hover { color: var(--ice-7); }
+        .last-updated {
+            font-size: 0.75rem; color: var(--ice-8);
+            background: rgba(255,255,255,0.4); padding: 0.25rem 0.75rem;
+            border-radius: 20px; border: 1px solid var(--glass-border);
+        }
+
+        .container { max-width: 1200px; margin: 0 auto; padding: 0 2rem; position: relative; z-index: 1; }
+
+        /* Hero */
+        .hero {
+            min-height: 90vh; display: flex; flex-direction: column;
+            justify-content: center; align-items: center;
+            text-align: center; padding-top: 100px; position: relative;
+        }
+        .hero-badge {
+            display: inline-block; padding: 0.5rem 1.25rem;
+            background: rgba(239,68,68,0.15); color: #b91c1c;
+            border: 1px solid rgba(239,68,68,0.3); border-radius: 50px;
+            font-size: 0.85rem; font-weight: 700; margin-bottom: 1.5rem;
+            animation: pulseBadge 2s infinite;
+        }
+        @keyframes pulseBadge {
+            0%, 100% { box-shadow: 0 0 0 0 rgba(239,68,68,0.2); }
+            50% { box-shadow: 0 0 0 8px rgba(239,68,68,0.05); }
+        }
+        .hero h1 {
+            font-size: clamp(2.2rem, 5vw, 4rem); font-weight: 900;
+            background: linear-gradient(135deg, var(--ice-10), var(--ice-6), var(--ice-8));
+            -webkit-background-clip: text; -webkit-text-fill-color: transparent;
+            margin-bottom: 1rem; line-height: 1.15;
+        }
+        .hero-subtitle {
+            font-size: 1.15rem; color: var(--ice-8);
+            max-width: 650px; margin-bottom: 2rem; opacity: 0.95;
+            line-height: 1.7;
+        }
+        .hero-cta {
+            display: flex; gap: 1rem; flex-wrap: wrap; justify-content: center;
+            margin-bottom: 3rem;
+        }
+
+        /* Live Overview */
+        .live-overview {
+            background: var(--glass); backdrop-filter: blur(20px);
+            border: 1px solid var(--glass-border); border-radius: 24px;
+            padding: 2rem; width: 100%; max-width: 900px;
+            box-shadow: var(--shadow); margin-bottom: 2rem;
+            text-align: left;
+        }
+        .live-header {
+            display: flex; justify-content: space-between; align-items: center;
+            margin-bottom: 1.5rem; flex-wrap: wrap; gap: 0.5rem;
+        }
+        .live-title {
+            font-size: 1.1rem; font-weight: 700; color: var(--ice-10);
+            display: flex; align-items: center; gap: 0.5rem;
+        }
+        .live-dot {
+            width: 10px; height: 10px; background: #ef4444; border-radius: 50%;
+            animation: blink 1.5s infinite;
+        }
+        @keyframes blink { 0%, 100% { opacity: 1; } 50% { opacity: 0.3; } }
+        .live-grid {
+            display: grid; grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+            gap: 1rem;
+        }
+        .live-item {
+            background: rgba(255,255,255,0.5); padding: 1.25rem;
+            border-radius: 16px; border: 1px solid var(--glass-border);
+        }
+        .live-item .label { font-size: 0.8rem; color: var(--ice-8); margin-bottom: 0.25rem; text-transform: uppercase; letter-spacing: 0.5px; }
+        .live-item .value { font-size: 1.5rem; font-weight: 800; color: var(--ice-10); }
+        .live-item .value.red { color: #dc2626; }
+        .live-item .value.orange { color: #ea580c; }
+        .live-item .sub { font-size: 0.8rem; color: var(--ice-8); margin-top: 0.25rem; }
+
+        /* Buttons */
+        .btn {
+            display: inline-flex; align-items: center; gap: 0.5rem;
+            padding: 0.875rem 2rem;
+            background: linear-gradient(135deg, var(--ice-6), var(--ice-8));
+            color: white; border: none; border-radius: 50px;
+            font-size: 1rem; font-weight: 600; cursor: pointer;
+            transition: all 0.3s;
+            box-shadow: 0 4px 15px rgba(0,188,212,0.3);
+            text-decoration: none;
+        }
+        .btn:hover { transform: translateY(-2px); box-shadow: 0 8px 25px rgba(0,188,212,0.4); }
+        .btn-outline {
+            background: rgba(255,255,255,0.6);
+            border: 2px solid var(--ice-5); color: var(--ice-8);
+            box-shadow: none;
+        }
+        .btn-outline:hover { background: rgba(0,188,212,0.1); }
+        .btn-red {
+            background: linear-gradient(135deg, #ef4444, #dc2626);
+            box-shadow: 0 4px 15px rgba(239,68,68,0.3);
+        }
+        .btn-red:hover { box-shadow: 0 8px 25px rgba(239,68,68,0.4); }
+
+        /* Glass cards */
+        .glass-card {
+            background: var(--glass); backdrop-filter: blur(20px);
+            border: 1px solid var(--glass-border); border-radius: 24px;
+            padding: 2rem; box-shadow: var(--shadow);
+            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+            position: relative; overflow: hidden;
+        }
+        .glass-card::before {
+            content: ""; position: absolute;
+            top: -50%; left: -50%; width: 200%; height: 200%;
+            background: radial-gradient(circle, rgba(255,255,255,0.3) 0%, transparent 70%);
+            opacity: 0; transition: opacity 0.4s;
+        }
+        .glass-card:hover::before { opacity: 1; }
+        .glass-card:hover {
+            transform: translateY(-5px) scale(1.01);
+            box-shadow: 0 20px 60px rgba(0, 150, 170, 0.2);
+        }
+
+        /* Section titles */
+        .section-title {
+            font-size: 1.8rem; font-weight: 800; color: var(--ice-10);
+            margin: 4rem 0 2rem; display: flex; align-items: center; gap: 1rem;
+        }
+        .section-title::before {
+            content: ""; width: 6px; height: 32px;
+            background: linear-gradient(to bottom, var(--ice-5), var(--ice-3));
+            border-radius: 3px;
+        }
+        .section-title.red::before { background: linear-gradient(to bottom, #ef4444, #f97316); }
+        .section-title.red::after { background: linear-gradient(to right, #ef4444, transparent); }
+        .section-title::after {
+            content: ""; flex: 1; height: 2px;
+            background: linear-gradient(to right, var(--ice-5), transparent);
+        }
+
+        /* Grid */
+        .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 1.5rem; margin: 2rem 0; }
+        .grid-2 { grid-template-columns: repeat(auto-fit, minmax(400px, 1fr)); }
+        .grid-3 { grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); }
+        .grid-4 { grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); }
+
+        /* Country cards */
+        .country-card {
+            background: var(--glass); backdrop-filter: blur(15px);
+            border: 1px solid var(--glass-border); border-radius: 20px;
+            padding: 1.5rem; transition: all 0.3s; cursor: pointer;
+            box-shadow: var(--shadow);
+        }
+        .country-card:hover { transform: translateY(-4px); box-shadow: 0 15px 40px rgba(0,150,170,0.2); }
+        .country-flag { font-size: 2.5rem; margin-bottom: 0.75rem; }
+        .country-name { font-weight: 700; font-size: 1.1rem; color: var(--ice-10); margin-bottom: 0.5rem; }
+        .country-desc { font-size: 0.9rem; color: var(--ice-8); line-height: 1.6; }
+        .country-tag {
+            display: inline-block; padding: 0.2rem 0.6rem;
+            background: rgba(0,188,212,0.1); color: var(--ice-7);
+            border-radius: 12px; font-size: 0.75rem; font-weight: 600;
+            margin-top: 0.75rem; border: 1px solid rgba(0,188,212,0.2);
+        }
+
+        /* Step cards */
+        .step-card {
+            display: flex; gap: 1rem; align-items: flex-start;
+            padding: 1.25rem; background: rgba(255,255,255,0.5);
+            border-radius: 16px; border: 1px solid var(--glass-border);
+            margin-bottom: 1rem; transition: all 0.3s;
+        }
+        .step-card:hover { transform: translateX(5px); background: rgba(255,255,255,0.7); }
+        .step-num {
+            width: 36px; height: 36px; background: var(--ice-3);
+            border-radius: 50%; display: flex; align-items: center;
+            justify-content: center; font-weight: 700; color: var(--ice-10);
+            font-size: 0.9rem; flex-shrink: 0;
+        }
+        .step-content h4 { font-weight: 700; color: var(--ice-10); margin-bottom: 0.25rem; }
+        .step-content p { color: var(--ice-8); font-size: 0.9rem; line-height: 1.6; }
+
+        /* Warning cards */
+        .warning-red {
+            background: rgba(254,226,226,0.7); border: 1px solid rgba(252,165,165,0.5);
+            border-radius: 16px; padding: 1.25rem; backdrop-filter: blur(10px);
+        }
+        .warning-red h4 { color: #b91c1c; margin-bottom: 0.5rem; }
+        .warning-red p { color: #991b1b; font-size: 0.9rem; line-height: 1.6; }
+        .warning-orange {
+            background: rgba(255,237,213,0.7); border: 1px solid rgba(252,211,77,0.5);
+            border-radius: 16px; padding: 1.25rem; backdrop-filter: blur(10px);
+        }
+        .warning-orange h4 { color: #c2410c; margin-bottom: 0.5rem; }
+        .warning-orange p { color: #9a3412; font-size: 0.9rem; line-height: 1.6; }
+        .warning-yellow {
+            background: rgba(254,252,232,0.7); border: 1px solid rgba(253,224,71,0.5);
+            border-radius: 16px; padding: 1.25rem; backdrop-filter: blur(10px);
+        }
+        .warning-yellow h4 { color: #a16207; margin-bottom: 0.5rem; }
+        .warning-yellow p { color: #854d0e; font-size: 0.9rem; line-height: 1.6; }
+
+        /* Tables */
+        .table-wrap { overflow-x: auto; }
+        table { width: 100%; border-collapse: collapse; background: rgba(255,255,255,0.5); border-radius: 16px; overflow: hidden; margin: 1rem 0; }
+        th, td { padding: 1rem; text-align: left; border-bottom: 1px solid var(--ice-2); }
+        th { background: var(--ice-3); color: var(--ice-10); font-weight: 700; font-size: 0.9rem; }
+        tr:hover { background: rgba(255,255,255,0.3); }
+        td { color: var(--ice-9); font-size: 0.9rem; }
+
+        /* FAQ */
+        .faq-item { margin-bottom: 1rem; }
+        .faq-q {
+            background: var(--glass); backdrop-filter: blur(10px);
+            padding: 1.25rem; border-radius: 16px; cursor: pointer;
+            display: flex; justify-content: space-between; align-items: center;
+            border: 1px solid var(--glass-border); font-weight: 600;
+            color: var(--ice-10); transition: all 0.3s;
+        }
+        .faq-q:hover { background: rgba(255,255,255,0.5); }
+        .faq-q::after { content: "▼"; transition: transform 0.3s; color: var(--ice-5); font-size: 0.8rem; }
+        .faq-q.active::after { transform: rotate(180deg); }
+        .faq-a {
+            max-height: 0; overflow: hidden;
+            transition: max-height 0.4s ease-out;
+            background: rgba(255,255,255,0.4);
+            border-radius: 0 0 16px 16px;
+            margin-top: -10px; padding: 0 1.25rem;
+        }
+        .faq-a.show { max-height: 500px; padding: 1.25rem; padding-top: 1.5rem; }
+        .faq-a p { color: var(--ice-9); line-height: 1.8; }
+
+        /* Recipe cards */
+        .recipe-card {
+            background: rgba(255,255,255,0.6); border-radius: 20px;
+            overflow: hidden; transition: all 0.4s;
+            border: 1px solid var(--glass-border); box-shadow: var(--shadow);
+        }
+        .recipe-card:hover { transform: translateY(-6px); box-shadow: 0 20px 40px rgba(0,150,170,0.15); }
+        .recipe-bar { height: 5px; border-radius: 3px 3px 0 0; }
+        .recipe-body { padding: 1.5rem; }
+        .recipe-tag {
+            display: inline-block; padding: 0.25rem 0.75rem;
+            border-radius: 20px; font-size: 0.75rem; font-weight: 600; margin-top: 0.75rem;
+        }
+
+        /* Calculator */
+        .calc-box {
+            background: linear-gradient(135deg, rgba(255,255,255,0.7), rgba(224,247,250,0.7));
+            border-radius: 24px; padding: 2.5rem; text-align: center;
+            border: 2px solid var(--ice-3); box-shadow: var(--shadow);
+        }
+        .calc-input {
+            width: 100%; max-width: 200px; padding: 1rem;
+            border: 2px solid var(--ice-3); border-radius: 16px;
+            font-size: 1.25rem; text-align: center; color: var(--ice-10);
+            background: white; margin: 1rem 0; outline: none;
+            transition: all 0.3s;
+        }
+        .calc-input:focus { border-color: var(--ice-6); box-shadow: 0 0 0 4px rgba(0,188,212,0.2); }
+        .calc-result { font-size: 3.5rem; font-weight: 900; margin: 1rem 0; }
+        .calc-result .num {
+            background: linear-gradient(135deg, var(--ice-8), var(--ice-5));
+            -webkit-background-clip: text; -webkit-text-fill-color: transparent;
+        }
+
+        /* Emergency banner */
+        .emergency-banner {
+            background: linear-gradient(135deg, rgba(239,68,68,0.15), rgba(249,115,22,0.15));
+            border: 1px solid rgba(239,68,68,0.3); border-radius: 24px;
+            padding: 2.5rem; margin: 3rem 0; position: relative; overflow: hidden;
+        }
+        .emergency-banner::before {
+            content: "🚨"; position: absolute; top: -20px; right: -20px;
+            font-size: 10rem; opacity: 0.03;
+        }
+        .emergency-banner h2 { color: #991b1b; margin-bottom: 1rem; font-size: 1.5rem; }
+        .emergency-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 1rem; margin-top: 1rem; }
+        .emergency-item {
+            background: rgba(255,255,255,0.7); padding: 1.25rem;
+            border-radius: 16px; border-left: 4px solid #ef4444;
+        }
+        .emergency-item h4 { color: #b91c1c; margin-bottom: 0.5rem; }
+        .emergency-item p { color: #7f1d1d; font-size: 0.9rem; line-height: 1.6; }
+
+        /* Footer */
+        footer {
+            text-align: center; padding: 3rem 2rem; margin-top: 4rem;
+            background: var(--glass); backdrop-filter: blur(20px);
+            border-top: 1px solid var(--glass-border); color: var(--ice-8);
+        }
+        .footer-disclaimer {
+            font-size: 0.8rem; opacity: 0.7; margin-top: 1rem;
+            max-width: 700px; margin-left: auto; margin-right: auto;
+            line-height: 1.6;
+        }
+
+        /* Scrollbar */
+        ::-webkit-scrollbar { width: 10px; }
+        ::-webkit-scrollbar-track { background: var(--ice-1); }
+        ::-webkit-scrollbar-thumb { background: var(--ice-4); border-radius: 5px; }
+        ::-webkit-scrollbar-thumb:hover { background: var(--ice-6); }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .nav-links { display: none; }
+            .grid, .grid-2, .grid-3, .grid-4 { grid-template-columns: 1fr; }
+            .hero h1 { font-size: 2rem; }
+            .live-grid { grid-template-columns: repeat(2, 1fr); }
+            .hero-cta { flex-direction: column; align-items: center; }
+            .hero-cta .btn { width: 100%; max-width: 300px; justify-content: center; }
+        }
+
+        .highlight { background: linear-gradient(120deg, rgba(128,222,234,0.3) 0%, rgba(128,222,234,0.3) 100%); background-repeat: no-repeat; background-size: 100% 40%; background-position: 0 85%; padding: 0 4px; }
+        .tag {
+            display: inline-block; padding: 0.25rem 0.75rem;
+            background: rgba(0,188,212,0.15); color: var(--ice-8);
+            border-radius: 20px; font-size: 0.8rem; font-weight: 600;
+            margin: 0.25rem; border: 1px solid rgba(0,188,212,0.2);
+        }
+    </style>
+</head>
+<body>
+    <div id="bubbles"></div>
+    <div class="glow glow-1"></div>
+    <div class="glow glow-2"></div>
+    <div class="glow glow-3"></div>
+
+    <nav id="mainNav">
+        <div class="logo"><span class="logo-icon">❄️</span>Heatwave Hub</div>
+        <ul class="nav-links">
+            <li><a href="#noac">No-AC Cooling</a></li>
+            <li><a href="#schools">School Closures</a></li>
+            <li><a href="#power">Power Cuts</a></li>
+            <li><a href="#herbal">Natural Remedies</a></li>
+            <li><a href="#firstaid">First Aid</a></li>
+            <li><a href="#faq">FAQ</a></li>
+        </ul>
+        <div class="last-updated">Updated: 29 Jun 2026</div>
+    </nav>
+
+    <div class="container">
+        <!-- Hero -->
+        <section class="hero" id="top">
+            <div class="hero-badge">🔴 LIVE: Europe Heatwave 2026</div>
+            <h1>Europe Heatwave Relief Hub</h1>
+            <p class="hero-subtitle">Your complete guide to surviving extreme heat. No-A/C cooling tips, school closure rules, power outage prep, and heat health advice — based on WHO & ECDC guidelines.</p>
+            <div class="hero-cta">
+                <a href="#noac" class="btn">❄️ Cool a Flat Without AC</a>
+                <a href="#schools" class="btn btn-outline">🏫 School Closure Rules</a>
+                <a href="#firstaid" class="btn btn-red">🚨 Heat Emergency Guide</a>
+            </div>
+
+            <!-- Live Overview -->
+            <div class="live-overview">
+                <div class="live-header">
+                    <div class="live-title"><div class="live-dot"></div> 2026 Europe Heatwave Overview</div>
+                    <span style="font-size: 0.8rem; color: var(--ice-8);">Data: Met Office, DWD, Météo-France</span>
+                </div>
+                <div class="live-grid">
+                    <div class="live-item">
+                        <div class="label">Peak Temperature</div>
+                        <div class="value red">42°C</div>
+                        <div class="sub">Spain & Portugal</div>
+                    </div>
+                    <div class="live-item">
+                        <div class="label">Countries Affected</div>
+                        <div class="value">15+</div>
+                        <div class="sub">France, UK, Germany, Italy...</div>
+                    </div>
+                    <div class="live-item">
+                        <div class="label">Population at Risk</div>
+                        <div class="value orange">150M</div>
+                        <div class="sub">Under extreme heat warnings</div>
+                    </div>
+                    <div class="live-item">
+                        <div class="label">Alert Level</div>
+                        <div class="value red">Red</div>
+                        <div class="sub">Highest in France, Spain</div>
+                    </div>
+                    <div class="live-item">
+                        <div class="label">Schools Closed</div>
+                        <div class="value">1,200+</div>
+                        <div class="sub">France, parts of UK</div>
+                    </div>
+                    <div class="live-item">
+                        <div class="label">AC Ownership</div>
+                        <div class="value">~5%</div>
+                        <div class="sub">UK households only</div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Country Guides -->
+        <h2 class="section-title">🌍 Country-Specific Guides</h2>
+        <p style="color: var(--ice-8); margin-bottom: 2rem;">Heatwave rules and cooling tips tailored to your location. Select your country for localised advice.</p>
+        <div class="grid grid-4">
+            <div class="country-card" onclick="document.getElementById('uk-guide').scrollIntoView({behavior:'smooth'})">
+                <div class="country-flag">🇬🇧</div>
+                <div class="country-name">United Kingdom</div>
+                <div class="country-desc">No statutory max classroom temp. Check local council guidance. Focus on Victorian terrace & flat cooling.</div>
+                <span class="country-tag">School Rules</span>
+                <span class="country-tag">No-AC Flats</span>
+            </div>
+            <div class="country-card" onclick="document.getElementById('de-guide').scrollIntoView({behavior:'smooth'})">
+                <div class="country-flag">🇩🇪</div>
+                <div class="country-name">Germany</div>
+                <div class="country-desc">Hitzefrei varies by Bundesland. NRW & Bavaria: ~35°C threshold. Altbau cooling strategies essential.</div>
+                <span class="country-tag">Hitzefrei Rules</span>
+                <span class="country-tag">Altbau Tips</span>
+            </div>
+            <div class="country-card">
+                <div class="country-flag">🇫🇷</div>
+                <div class="country-name">France</div>
+                <div class="country-desc">Météo-France red alert = national action plan. Canicule protocol triggers school closures & cooling centres.</div>
+                <span class="country-tag">Canicule Plan</span>
+                <span class="country-tag">Level 3 Alert</span>
+            </div>
+            <div class="country-card">
+                <div class="country-flag">🇪🇸</div>
+                <div class="country-name">Spain</div>
+                <div class="country-desc">AEMET red warnings common. Focus on siesta culture, hydration, and recognising heat exhaustion early.</div>
+                <span class="country-tag">Red Warning</span>
+                <span class="country-tag">Siesta Safety</span>
+            </div>
+        </div>
+
+        <!-- No-AC Cooling -->
+        <h2 class="section-title" id="noac">🏠 How to Cool a Flat Without AC</h2>
+        <p style="color: var(--ice-8); margin-bottom: 2rem;">Over half of European households lack air conditioning. These methods work in old buildings, flats, and during power cuts.</p>
+
+        <div class="grid grid-2">
+            <div class="glass-card">
+                <h3 style="margin-bottom: 1.5rem; color: var(--ice-10); font-size: 1.2rem;">🌡️ Daytime Heat Block</h3>
+                <div class="step-card">
+                    <div class="step-num">1</div>
+                    <div class="step-content">
+                        <h4>Close & Cover Windows by 8 AM</h4>
+                        <p>Shut all windows and pull blackout curtains before the sun hits. European buildings trap heat — once it's in, it stays. Use reflective foil or emergency blankets behind curtains for extra insulation.</p>
+                    </div>
+                </div>
+                <div class="step-card">
+                    <div class="step-num">2</div>
+                    <div class="step-content">
+                        <h4>Seal Gaps & Switch Off Heat Sources</h4>
+                        <p>Draught-proof doors with rolled towels. Turn off all non-essential electronics, LED lights, and avoid cooking with the oven or hob until after sunset.</p>
+                    </div>
+                </div>
+                <div class="step-card">
+                    <div class="step-num">3</div>
+                    <div class="step-content">
+                        <h4>Create a "Cool Room"</h4>
+                        <p>Pick the north-facing room with the smallest windows. Close the door and use it as your daytime refuge. Place a bowl of ice in front of a fan for instant evaporative cooling.</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="glass-card">
+                <h3 style="margin-bottom: 1.5rem; color: var(--ice-10); font-size: 1.2rem;">🌙 Nighttime Cooling</h3>
+                <div class="step-card">
+                    <div class="step-num">1</div>
+                    <div class="step-content">
+                        <h4>Open Windows at Sunset for Cross-Ventilation</h4>
+                        <p>Once outside temp drops below indoor temp (usually 9-10 PM), open windows on opposite sides of the flat. Use a fan to push hot air out and pull cool air in.</p>
+                    </div>
+                </div>
+                <div class="step-card">
+                    <div class="step-num">2</div>
+                    <div class="step-content">
+                        <h4>Cool Your Bed, Not the Room</h4>
+                        <p>Fill a hot water bottle with cold water and freeze it. Place under your pillow or sheets 30 mins before bed. Use 100% cotton or linen sheets — they breathe better than synthetics.</p>
+                    </div>
+                </div>
+                <div class="step-card">
+                    <div class="step-num">3</div>
+                    <div class="step-content">
+                        <h4>Sleep Low & Wet</h4>
+                        <p>Heat rises. Sleep on the floor or lowest level of your flat. Dampen a thin cotton sheet with cold water and use it as a cover — evaporation cools your body directly.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="warning-yellow" style="margin-top: 2rem;">
+            <h4>⚡ Electrical Safety Warning</h4>
+            <p>Many European old buildings (especially UK Victorian terraces and German Altbau) have outdated wiring. <strong>Do not</strong> run multiple high-power fans or portable AC units on the same circuit — this is a leading cause of heatwave-related house fires. Check your fuse box capacity.</p>
+        </div>
+
+        <!-- School Closures -->
+        <h2 class="section-title" id="schools">🏫 Will Schools Close in Extreme Heat?</h2>
+        <p style="color: var(--ice-8); margin-bottom: 2rem;">Search interest for school closures has surged <strong>+800%</strong>. Here's what parents need to know by country.</p>
+
+        <div class="table-wrap">
+            <table>
+                <tr>
+                    <th>Country</th>
+                    <th>Legal Threshold</th>
+                    <th>Who Decides</th>
+                    <th>Typical Action</th>
+                </tr>
+                <tr>
+                    <td><strong>🇬🇧 UK</strong></td>
+                    <td>No statutory maximum temp</td>
+                    <td>Individual headteachers</td>
+                    <td>May close if classrooms exceed 30°C; DfE advises risk assessment</td>
+                </tr>
+                <tr>
+                    <td><strong>🇩🇪 Germany</strong></td>
+                    <td>Varies by state (Land)</td>
+                    <td>Local education authority</td>
+                    <td>NRW: Hitzefrei at 35°C; Bavaria: 32°C; Berlin: case-by-case</td>
+                </tr>
+                <tr>
+                    <td><strong>🇫🇷 France</strong></td>
+                    <td>Canicule (Level 3) alert</td>
+                    <td>Ministry of Education + prefect</td>
+                    <td>Red alert triggers closure; exams may be rescheduled; cooling centres open</td>
+                </tr>
+                <tr>
+                    <td><strong>🇪🇸 Spain</strong></td>
+                    <td>Regional decision</td>
+                    <td>Autonomous community</td>
+                    <td>Andalusia: closures at 40°C; Madrid: flexible timetable shifts</td>
+                </tr>
+                <tr>
+                    <td><strong>🇮🇹 Italy</strong></td>
+                    <td>No national law</td>
+                    <td>Individual schools</td>
+                    <td>Common in south; early dismissal or suspension of outdoor activities</td>
+                </tr>
+            </table>
+        </div>
+
+        <div class="grid grid-2" style="margin-top: 2rem;">
+            <div class="glass-card">
+                <h3 style="margin-bottom: 1rem; color: var(--ice-10);">👨‍👩‍👧 Parent Checklist: Hot School Day</h3>
+                <ul style="color: var(--ice-9); line-height: 2; padding-left: 1.2rem;">
+                    <li>Check school website / app by 7 AM for closure notices</li>
+                    <li>Pack 2 water bottles (frozen one melts to cold water by lunch)</li>
+                    <li>Apply SPF50+ sunscreen before leaving; pack a hat</li>
+                    <li>Light-coloured cotton uniform; avoid synthetic PE kits</li>
+                    <li>Know the signs: headache, dizziness, nausea = collect immediately</li>
+                </ul>
+            </div>
+            <div class="glass-card">
+                <h3 style="margin-bottom: 1rem; color: var(--ice-10);">🏠 If School Closes: Home Cooling</h3>
+                <ul style="color: var(--ice-9); line-height: 2; padding-left: 1.2rem;">
+                    <li>Designate one "cool room" with curtains closed all day</li>
+                    <li>Screen time generates heat — limit tablets/laptops</li>
+                    <li>Freeze fruit (grapes, berries) for healthy cooling snacks</li>
+                    <li>Make homemade ice lollies from diluted juice</li>
+                    <li>Check on elderly neighbours while children are home</li>
+                </ul>
+            </div>
+        </div>
+
+        <!-- UK & DE Deep Dives -->
+        <div class="grid grid-2" style="margin-top: 2rem;">
+            <div class="glass-card" id="uk-guide">
+                <div style="font-size: 2rem; margin-bottom: 0.5rem;">🇬🇧</div>
+                <h3 style="margin-bottom: 1rem; color: var(--ice-10);">UK Heatwave Guide</h3>
+                <div style="color: var(--ice-9); line-height: 1.8; font-size: 0.95rem;">
+                    <p style="margin-bottom: 1rem;"><strong>The UK problem:</strong> Less than 5% of homes have AC. Victorian terraces, 1960s tower blocks, and modern flats with sealed windows all overheat differently.</p>
+                    <p style="margin-bottom: 1rem;"><strong>Schools:</strong> No legal maximum temperature. The NEU teaching union recommends 26°C as a working maximum, but it's not law. Check your local council's "hot weather contingency plan."</p>
+                    <p style="margin-bottom: 1rem;"><strong>Homes:</strong> South-facing bay windows are heat traps. External shading (awnings, external blinds) is far more effective than internal curtains. If you have a loft, open the hatch at night — hot air escapes upwards.</p>
+                    <p><strong>Water:</strong> UK tap water is safe and cold. Fill bottles and place in the freezer overnight. During a heatwave, demand spikes — fill your bathtub with cold water on day 1 as a reserve for cooling.</p>
+                </div>
+                <span class="tag">hot weather uk</span>
+                <span class="tag">heatwave england</span>
+            </div>
+            <div class="glass-card" id="de-guide">
+                <div style="font-size: 2rem; margin-bottom: 0.5rem;">🇩🇪</div>
+                <h3 style="margin-bottom: 1rem; color: var(--ice-10);">Germany Heatwave Guide</h3>
+                <div style="color: var(--ice-9); line-height: 1.8; font-size: 0.95rem;">
+                    <p style="margin-bottom: 1rem;"><strong>The German problem:</strong> Altbau (pre-1945 buildings) have thick walls that store heat for days. New builds (Neubau) with tight insulation trap heat like a greenhouse.</p>
+                    <p style="margin-bottom: 1rem;"><strong>Hitzefrei:</strong> Not a legal right. Each Bundesland sets its own threshold. In NRW, schools may release early at 35°C. In Bavaria, 32°C is the common trigger. Check <em>kultusministerium</em> for your state.</p>
+                    <p style="margin-bottom: 1rem;"><strong>Roller shutters (Rollläden):</strong> If you have them, close them completely before sunrise. They reduce heat gain by up to 80% — far better than curtains.</p>
+                    <p><strong>Public pools:</strong> During Hitzewelle, outdoor pools (Freibäder) extend hours. Arrive before 10 AM to avoid queues. Many cities open fountains and spray parks (Wasserspielplätze) for free cooling.</p>
+                </div>
+                <span class="tag">extreme hitze</span>
+                <span class="tag">abkühlen ohne klimaanlage</span>
+            </div>
+        </div>
+
+        <!-- Power Cuts & Disruptions -->
+        <h2 class="section-title" id="power">⚡ Power Cuts, Bins & Travel Disruptions</h2>
+        <p style="color: var(--ice-8); margin-bottom: 2rem;">Heatwaves strain infrastructure. Here's how to handle the disruptions that follow.</p>
+
+        <div class="grid grid-3">
+            <div class="glass-card">
+                <div style="font-size: 2rem; margin-bottom: 0.75rem;">🔌</div>
+                <h3 style="margin-bottom: 1rem; color: var(--ice-10); font-size: 1.1rem;">Power Cut Prep</h3>
+                <ul style="color: var(--ice-9); line-height: 1.9; padding-left: 1.2rem; font-size: 0.9rem;">
+                    <li>Freeze water bottles & ice packs <strong>before</strong> the heat peaks</li>
+                    <li>Keep phone charged; have a power bank ready</li>
+                    <li>Know your neighbourhood's cooling centre location</li>
+                    <li>LED camping lantern > candles (fire risk)</li>
+                    <li>Fridge door stays shut: food lasts 4h, freezer 24-48h if full</li>
+                </ul>
+            </div>
+            <div class="glass-card">
+                <div style="font-size: 2rem; margin-bottom: 0.75rem;">🗑️</div>
+                <h3 style="margin-bottom: 1rem; color: var(--ice-10); font-size: 1.1rem;">Bin Collection Changes</h3>
+                <ul style="color: var(--ice-9); line-height: 1.9; padding-left: 1.2rem; font-size: 0.9rem;">
+                    <li>Collections often shift to early morning (5-7 AM)</li>
+                    <li>Check your council website for schedule changes</li>
+                    <li>Double-bag food waste; freeze it until collection day</li>
+                    <li>Rinse bins after emptying to prevent maggots</li>
+                    <li>Keep bins in shade; heat accelerates decomposition</li>
+                </ul>
+            </div>
+            <div class="glass-card">
+                <div style="font-size: 2rem; margin-bottom: 0.75rem;">🚆</div>
+                <h3 style="margin-bottom: 1rem; color: var(--ice-10); font-size: 1.1rem;">Travel Disruptions</h3>
+                <ul style="color: var(--ice-9); line-height: 1.9; padding-left: 1.2rem; font-size: 0.9rem;">
+                    <li>Rail tracks warp at 50°C+; speed limits imposed</li>
+                    <li>Tarmac melts; road closures common in south UK</li>
+                    <li>Airports: heat reduces aircraft lift; delays likely</li>
+                    <li>Carry water on all journeys; never leave pets in cars</li>
+                    <li>Check National Rail / DB / SNCF apps before travel</li>
+                </ul>
+            </div>
+        </div>
+
+        <!-- Natural Remedies -->
+        <h2 class="section-title" id="herbal">🌿 Natural & Herbal Cooling Remedies</h2>
+        <p style="color: var(--ice-8); margin-bottom: 2rem;">Traditional cooling ingredients backed by modern hydration science. Safe, caffeine-free, and easy to make at home.</p>
+
+        <div class="grid grid-4" style="margin-bottom: 2rem;">
+            <div class="glass-card" style="padding: 1.5rem;">
+                <div style="font-weight: 700; color: var(--ice-6); margin-bottom: 1rem; font-size: 1.05rem;">🍃 Cooling Herbs</div>
+                <ul style="color: var(--ice-9); font-size: 0.9rem; line-height: 2; list-style: none; padding: 0;">
+                    <li>🌿 Peppermint · cooling sensation</li>
+                    <li>🌸 Lemon balm · calming</li>
+                    <li>🌼 Chamomile · anti-inflammatory</li>
+                    <li>🥒 Cucumber · 96% water</li>
+                </ul>
+            </div>
+            <div class="glass-card" style="padding: 1.5rem;">
+                <div style="font-weight: 700; color: var(--ice-5); margin-bottom: 1rem; font-size: 1.05rem;">🍉 Hydrating Foods</div>
+                <ul style="color: var(--ice-9); font-size: 0.9rem; line-height: 2; list-style: none; padding: 0;">
+                    <li>🍉 Watermelon · 92% water</li>
+                    <li>🍓 Strawberries · 91% water</li>
+                    <li>🥥 Coconut water · electrolytes</li>
+                    <li>🍊 Orange · vitamin C + water</li>
+                </ul>
+            </div>
+            <div class="glass-card" style="padding: 1.5rem;">
+                <div style="font-weight: 700; color: var(--ice-6); margin-bottom: 1rem; font-size: 1.05rem;">🫖 Traditional East Asian</div>
+                <ul style="color: var(--ice-9); font-size: 0.9rem; line-height: 2; list-style: none; padding: 0;">
+                    <li>🟢 Mung bean · clears heat</li>
+                    <li>🪷 Lotus leaf · summer tea</li>
+                    <li>⚫ Ume (plum) · restores salts</li>
+                    <li>🌾 Barley water · cooling grain</li>
+                </ul>
+            </div>
+            <div class="glass-card" style="padding: 1.5rem;">
+                <div style="font-weight: 700; color: var(--ice-5); margin-bottom: 1rem; font-size: 1.05rem;">⚠️ Who Should Avoid</div>
+                <ul style="color: var(--ice-9); font-size: 0.9rem; line-height: 2; list-style: none; padding: 0;">
+                    <li>Diabetics: avoid sweetened drinks</li>
+                    <li>Kidney disease: limit potassium-rich coconut</li>
+                    <li>Pregnant: avoid strong herbal tonics</li>
+                    <li>On diuretics: consult GP first</li>
+                </ul>
+            </div>
+        </div>
+
+        <h3 style="font-size: 1.25rem; font-weight: 700; color: var(--ice-10); margin-bottom: 1.5rem;">Easy Cooling Drinks Recipes</h3>
+        <div class="grid grid-3" style="margin-bottom: 3rem;">
+            <div class="recipe-card">
+                <div class="recipe-bar" style="background: linear-gradient(to right, var(--ice-3), var(--ice-5));"></div>
+                <div class="recipe-body">
+                    <h4 style="font-weight: 700; color: var(--ice-10); margin-bottom: 0.5rem;">Peppermint Cucumber Water</h4>
+                    <p style="color: var(--ice-8); font-size: 0.9rem; margin-bottom: 0.75rem;">10 fresh mint leaves + 5 cucumber slices in 1L cold water. Infuse 2 hours.</p>
+                    <span class="recipe-tag" style="background: rgba(0,188,212,0.1); color: var(--ice-7);">Zero sugar · Instant cooling</span>
+                </div>
+            </div>
+            <div class="recipe-card">
+                <div class="recipe-bar" style="background: linear-gradient(to right, var(--ice-5), var(--ice-3));"></div>
+                <div class="recipe-body">
+                    <h4 style="font-weight: 700; color: var(--ice-10); margin-bottom: 0.5rem;">Classic Barley Water</h4>
+                    <p style="color: var(--ice-8); font-size: 0.9rem; margin-bottom: 0.75rem;">50g pearl barley boiled in 1L water. Strain, add lemon & honey. Chill.</p>
+                    <span class="recipe-tag" style="background: rgba(45,212,191,0.1); color: var(--ice-8);">Traditional UK remedy · Hydrating</span>
+                </div>
+            </div>
+            <div class="recipe-card">
+                <div class="recipe-bar" style="background: linear-gradient(to right, var(--ice-3), var(--ice-5));"></div>
+                <div class="recipe-body">
+                    <h4 style="font-weight: 700; color: var(--ice-10); margin-bottom: 0.5rem;">Ume-Shiso Electrolyte</h4>
+                    <p style="color: var(--ice-8); font-size: 0.9rem; margin-bottom: 0.75rem;">1 umeboshi plum + 1 shiso leaf in 500ml water. Dissolves salts lost in sweat.</p>
+                    <span class="recipe-tag" style="background: rgba(0,188,212,0.1); color: var(--ice-7);">Natural electrolytes · Post-exercise</span>
+                </div>
+            </div>
+        </div>
+
+        <!-- Water Calculator -->
+        <h2 class="section-title" id="calculator">💧 Daily Hydration Calculator</h2>
+        <div class="grid grid-2">
+            <div class="calc-box">
+                <h3 style="margin-bottom: 1rem; color: var(--ice-10);">Heatwave Day Water Target</h3>
+                <p style="color: var(--ice-8); margin-bottom: 1rem;">Enter your weight to calculate recommended water intake during extreme heat.</p>
+                <input type="number" class="calc-input" id="weightInput" placeholder="70" min="30" max="150">
+                <div style="color: var(--ice-8); font-size: 0.9rem;">kg</div>
+                <div class="calc-result"><span class="num" id="waterResult">--</span></div>
+                <div style="color: var(--ice-8);">ml / day</div>
+                <div style="margin-top: 1.5rem; font-size: 0.85rem; color: var(--ice-8); text-align: left;">
+                    <p>💡 <strong>Hydration Rules:</strong></p>
+                    <ul style="margin-left: 1.2rem; margin-top: 0.5rem; line-height: 2;">
+                        <li>Drink 200-300ml every hour, even if not thirsty</li>
+                        <li>Add a pinch of salt after heavy sweating</li>
+                        <li>Urine should be pale yellow; dark = drink more</li>
+                        <li>Avoid alcohol and excessive caffeine</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="glass-card" style="display: flex; flex-direction: column; justify-content: center;">
+                <h3 style="margin-bottom: 1.5rem; color: var(--ice-10);">🧂 Electrolyte Options</h3>
+                <table>
+                    <tr><th>Scenario</th><th>Drink</th><th>How to Make</th></tr>
+                    <tr><td>Normal day</td><td>Tap water</td><td>Chill in fridge overnight</td></tr>
+                    <tr><td>Heavy sweating</td><td>Oral rehydration salts</td><td>Follow pharmacy sachet instructions</td></tr>
+                    <tr><td>Outdoor work</td><td>Low-sugar sports drink</td><td>Dilute 1:1 with water if sweet</td></tr>
+                    <tr><td>Home remedy</td><td>Barley water</td><td>Barley + lemon + pinch of salt</td></tr>
+                    <tr><td>Post-exercise</td><td>Coconut water</td><td>Natural, no added sugar</td></tr>
+                </table>
+            </div>
+        </div>
+
+        <!-- First Aid -->
+        <h2 class="section-title red" id="firstaid">🚨 Heat Emergency: Recognise & Act</h2>
+        <p style="color: var(--ice-8); margin-bottom: 2rem;">Based on WHO & ECDC guidelines. Heatstroke is a medical emergency. Speed of cooling determines survival.</p>
+
+        <div class="emergency-banner">
+            <h2>🌡️ Heatstroke (Sunstroke) — Call Emergency Services Immediately</h2>
+            <p style="color: #7f1d1d; margin-bottom: 1rem;">Body temperature > 40°C + altered mental state. <strong>Cool first, transport second.</strong> Every minute counts.</p>
+            <div class="emergency-grid">
+                <div class="emergency-item">
+                    <h4>Core Signs</h4>
+                    <p>Hot, dry skin (classic) or profuse sweating (exertional). Confusion, agitation, seizures, loss of consciousness.</p>
+                </div>
+                <div class="emergency-item">
+                    <h4>Immediate First Aid</h4>
+                    <p>1. Move to shade. 2. Remove clothing. 3. Douse with cold water / ice packs on neck, armpits, groin. 4. Fan skin. 5. Call 999/112.</p>
+                </div>
+                <div class="emergency-item">
+                    <h4>Do NOT</h4>
+                    <p>Do not give fluids to an unconscious person (risk of choking). Do not give paracetamol — it does not treat heatstroke. Do not wait to "see if they improve."</p>
+                </div>
+                <div class="emergency-item">
+                    <h4>Cooling Target</h4>
+                    <p>Aim to reduce core temperature to 38.5°C within 30 minutes. Immersion in cold water is the most effective method if available.</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="grid grid-3">
+            <div class="warning-yellow">
+                <h4>⚠️ Heat Exhaustion (Pre-Emergency)</h4>
+                <p>Heavy sweating, cold skin, dizziness, nausea, muscle cramps. <strong>Action:</strong> Move to cool place, loosen clothing, drink water with salts, rest for 30+ minutes. If not improving in 30 mins, treat as heatstroke.</p>
+            </div>
+            <div class="warning-orange">
+                <h4>🩹 Heat Cramps (Early Warning)</h4>
+                <p>Painful muscle spasms during or after intense exercise in heat. <strong>Action:</strong> Stop activity, stretch gently, drink electrolyte solution, do not resume exercise for several hours.</p>
+            </div>
+            <div class="warning-red">
+                <h4>🚫 Never Leave Anyone in a Parked Car</h4>
+                <p>Interior temperature can reach 50°C within 10 minutes even with windows cracked. This applies to children, elderly, pets, and adults. It is lethal.</p>
+            </div>
+        </div>
+
+        <!-- Vulnerable Groups -->
+        <h2 class="section-title">👨‍👩‍👧‍👦 Vulnerable Groups</h2>
+        <div class="grid grid-4">
+            <div class="glass-card">
+                <div style="font-size: 2.5rem; margin-bottom: 1rem;">👴</div>
+                <h4 style="margin-bottom: 1rem; color: var(--ice-10); font-size: 1.1rem;">Elderly (65+)</h4>
+                <ul style="color: var(--ice-9); line-height: 2; padding-left: 1.2rem; font-size: 0.9rem;">
+                    <li>Thirst sensation declines with age</li>
+                    <li>Check on neighbours daily during red alerts</li>
+                    <li>Keep indoor temp below 26°C if possible</li>
+                    <li>Medications (diuretics, beta-blockers) increase risk</li>
+                </ul>
+            </div>
+            <div class="glass-card">
+                <div style="font-size: 2.5rem; margin-bottom: 1rem;">👶</div>
+                <h4 style="margin-bottom: 1rem; color: var(--ice-10); font-size: 1.1rem;">Babies & Children</h4>
+                <ul style="color: var(--ice-9); line-height: 2; padding-left: 1.2rem; font-size: 0.9rem;">
+                    <li>Never leave in a car, even for 2 minutes</li>
+                    <li>Check back of neck: if hot/sweaty, cool immediately</li>
+                    <li>Feed more frequently; offer water every 20 min</li>
+                    <li>Light cotton clothing only; no heavy blankets</li>
+                </ul>
+            </div>
+            <div class="glass-card">
+                <div style="font-size: 2.5rem; margin-bottom: 1rem;">🤰</div>
+                <h4 style="margin-bottom: 1rem; color: var(--ice-10); font-size: 1.1rem;">Pregnant Women</h4>
+                <ul style="color: var(--ice-9); line-height: 2; padding-left: 1.2rem; font-size: 0.9rem;">
+                    <li>Core body temp runs higher; heat intolerance is common</li>
+                    <li>Avoid herbal remedies not cleared by midwife</li>
+                    <li>Swollen feet? Elevate and cool with damp cloths</li>
+                    <li>Seek help for dizziness or reduced fetal movement</li>
+                </ul>
+            </div>
+            <div class="glass-card">
+                <div style="font-size: 2.5rem; margin-bottom: 1rem;">💪</div>
+                <h4 style="margin-bottom: 1rem; color: var(--ice-10); font-size: 1.1rem;">Outdoor Workers</h4>
+                <ul style="color: var(--ice-9); line-height: 2; padding-left: 1.2rem; font-size: 0.9rem;">
+                    <li>EU law: risk assessment above 28°C indoor / 18°C outdoor</li>
+                    <li>Rotate tasks; rest in shade 10 min every hour</li>
+                    <li>Wear light, breathable clothing and a wide-brim hat</li>
+                    <li>Know your rights: unsafe heat = right to stop work</li>
+                </ul>
+            </div>
+        </div>
+
+        <!-- FAQ -->
+        <h2 class="section-title" id="faq">❓ Frequently Asked Questions</h2>
+        <p style="color: var(--ice-8); margin-bottom: 2rem;">Answers to the most searched questions about the 2026 Europe heatwave.</p>
+
+        <div style="margin-bottom: 3rem;">
+            <div class="faq-item">
+                <div class="faq-q" onclick="toggleFaq(this)">
+                    <span>How hot is too hot for schools in the UK?</span>
+                </div>
+                <div class="faq-a">
+                    <p>There is <strong>no legal maximum temperature</strong> for UK schools. The Department for Education advises headteachers to conduct risk assessments. The National Education Union (NEU) recommends 26°C as a working maximum for classrooms. In practice, many schools close or send children home when indoor temperatures exceed 30-32°C. Check your school's website or app by 7 AM on hot days.</p>
+                </div>
+            </div>
+            <div class="faq-item">
+                <div class="faq-q" onclick="toggleFaq(this)">
+                    <span>How can I cool my room without AC fast?</span>
+                </div>
+                <div class="faq-a">
+                    <p>The fastest method is <strong>evaporative cooling</strong>: place a bowl of ice or frozen water bottles in front of a fan. Close curtains and blinds before the sun hits your windows (ideally by 8 AM). Open windows on opposite sides of your flat after sunset to create cross-ventilation. Sleep on the lowest floor possible, as heat rises. Dampen a thin cotton sheet with cold water and use it as a bed cover.</p>
+                </div>
+            </div>
+            <div class="faq-item">
+                <div class="faq-q" onclick="toggleFaq(this)">
+                    <span>What should I do in a heatwave power cut?</span>
+                </div>
+                <div class="faq-a">
+                    <p>First, <strong>keep fridge and freezer doors closed</strong> — food stays safe for 4 hours in a fridge and 24-48 hours in a full freezer. Use frozen water bottles as personal cooling packs. Go to a public cooling centre (libraries, shopping centres, cinemas). Check your local council website for designated "heat refuges." If you have vulnerable neighbours, check on them immediately — they may not be able to travel.</p>
+                </div>
+            </div>
+            <div class="faq-item">
+                <div class="faq-q" onclick="toggleFaq(this)">
+                    <span>How long will the 2026 Europe heatwave last?</span>
+                </div>
+                <div class="faq-a">
+                    <p>Heatwaves in Europe typically last <strong>3 to 7 days</strong>, but the 2026 event has seen prolonged high pressure systems extending this to 10+ days in some regions. The Met Office, DWD (Germany), and Météo-France issue 5-day rolling forecasts. Red alerts are usually downgraded to orange within 48 hours of peak temperatures. Bookmark official weather services for real-time updates rather than relying on general news.</p>
+                </div>
+            </div>
+            <div class="faq-item">
+                <div class="faq-q" onclick="toggleFaq(this)">
+                    <span>What temperature causes heat stroke?</span>
+                </div>
+                <div class="faq-a">
+                    <p>Heatstroke occurs when the body's core temperature exceeds <strong>40°C (104°F)</strong> and is accompanied by neurological symptoms (confusion, agitation, seizures, or loss of consciousness). However, heat exhaustion can begin at 38°C. Critical risk factors include: age over 65, dehydration, certain medications (diuretics, antihistamines, beta-blockers), and high humidity which prevents sweat evaporation. It is a medical emergency — call 999/112 immediately.</p>
+                </div>
+            </div>
+            <div class="faq-item">
+                <div class="faq-q" onclick="toggleFaq(this)">
+                    <span>Is it safe to drink ice-cold water in extreme heat?</span>
+                </div>
+                <div class="faq-a">
+                    <p>Drinking <strong>very cold water</strong> (near 0°C) during extreme heat can cause stomach cramps and, in rare cases, trigger vasovagal syncope (fainting) due to rapid constriction of blood vessels. The safest approach is to drink <strong>cool (not ice-cold) water</strong> at 10-15°C. Sip slowly — 200-300ml every 15-20 minutes. If you are very hot, wet your skin and clothing first, then drink. This cools your surface faster than drinking alone.</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Footer -->
+        <footer>
+            <p style="font-size: 1.2rem; margin-bottom: 0.5rem;">❄️ Europe Heatwave Relief Hub</p>
+            <p style="font-size: 0.9rem; opacity: 0.8;">Stay safe. Stay cool. Check on your neighbours.</p>
+            <div class="footer-disclaimer">
+                <p>Advice based on WHO, ECDC, NHS, and national meteorological service guidelines. This page is for informational purposes only and does not replace professional medical advice. In a medical emergency, always call your local emergency number (112 in EU, 999 in UK).</p>
+                <p style="margin-top: 0.5rem;">Last updated: 29 June 2026 | Data sources: Met Office, DWD, Météo-France, AEMET, WHO, ECDC</p>
+            </div>
+        </footer>
+    </div>
+
+    <script>
+        // Bubbles
+        function createBubbles() {
+            const container = document.getElementById('bubbles');
+            for (let i = 0; i < 15; i++) {
+                const bubble = document.createElement('div');
+                bubble.className = 'bubble';
+                const size = Math.random() * 60 + 20;
+                bubble.style.width = size + 'px';
+                bubble.style.height = size + 'px';
+                bubble.style.left = Math.random() * 100 + '%';
+                bubble.style.animationDuration = (Math.random() * 10 + 10) + 's';
+                bubble.style.animationDelay = (Math.random() * 10) + 's';
+                container.appendChild(bubble);
+            }
+        }
+        createBubbles();
+
+        // Nav scroll shadow
+        window.addEventListener('scroll', () => {
+            const nav = document.getElementById('mainNav');
+            if (window.scrollY > 20) nav.classList.add('scrolled');
+            else nav.classList.remove('scrolled');
+        });
+
+        // Water calculator
+        document.getElementById('weightInput').addEventListener('input', function(e) {
+            const weight = parseFloat(e.target.value);
+            const resultEl = document.getElementById('waterResult');
+            if (weight > 0) {
+                const amount = Math.round(weight * 35 * 1.5);
+                resultEl.textContent = amount.toLocaleString();
+            } else { resultEl.textContent = '--'; }
+        });
+
+        // FAQ toggle
+        function toggleFaq(header) {
+            const body = header.nextElementSibling;
+            const isActive = header.classList.contains('active');
+            document.querySelectorAll('.faq-q').forEach(h => h.classList.remove('active'));
+            document.querySelectorAll('.faq-a').forEach(b => b.classList.remove('show'));
+            if (!isActive) { header.classList.add('active'); body.classList.add('show'); }
+        }
+
+        // Smooth scroll
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function(e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) target.scrollIntoView({ behavior: 'smooth' });
+            });
+        });
+
+        // Scroll reveal
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.style.opacity = '1';
+                    entry.target.style.transform = 'translateY(0)';
+                }
+            });
+        }, { threshold: 0.1 });
+        document.querySelectorAll('.glass-card, .recipe-card, .country-card, .live-item').forEach(el => {
+            el.style.opacity = '0'; el.style.transform = 'translateY(20px)';
+            el.style.transition = 'all 0.6s ease-out';
+            observer.observe(el);
+        });
+    </script>
+</body>
+</html>
