@@ -6,16 +6,16 @@
     <title>Europe Heatwave Relief Hub | Stay Cool in Extreme Heat 2026</title>
     <meta name="description" content="Complete guide to surviving the 2026 European heatwave: no-AC cooling tips, school closure rules, power outage prep, heat health advice, and natural remedies. Updated daily.">
     <meta name="robots" content="index, follow">
-    <link rel="canonical" href="index.html">
-    <link rel="alternate" hreflang="en" href="index.html">
-    <link rel="alternate" hreflang="de" href="index.html">
-    <link rel="alternate" hreflang="zh-CN" href="index.html">
-    <link rel="alternate" hreflang="x-default" href="index.html">
+    <link rel="canonical" href="https://europe-heatwave-relief-hub.vercel.app/index.html">
+    <link rel="alternate" hreflang="en" href="https://europe-heatwave-relief-hub.vercel.app/index.html">
+    <link rel="alternate" hreflang="de" href="https://europe-heatwave-relief-hub.vercel.app/index.html">
+    <link rel="alternate" hreflang="zh-CN" href="https://europe-heatwave-relief-hub.vercel.app/index.html">
+    <link rel="alternate" hreflang="x-default" href="https://europe-heatwave-relief-hub.vercel.app/index.html">
     <meta property="og:title" content="Europe Heatwave Relief Hub | Stay Cool in Extreme Heat 2026">
     <meta property="og:description" content="Complete guide to surviving the 2026 European heatwave: no-AC cooling tips, school closure rules, power outage prep, heat health advice, and natural remedies. Updated daily.">
     <meta property="og:type" content="website">
-    <meta property="og:url" content="https://example.com/index.html">
-    <meta property="og:image" content="https://example.com/images/heatwave-og.jpg">
+    <meta property="og:url" content="https://europe-heatwave-relief-hub.vercel.app/index.html">
+    <meta property="og:image" content="https://europe-heatwave-relief-hub.vercel.app/og-image.jpg">
     <meta name="twitter:card" content="summary_large_image">
     <meta name="twitter:title" content="Europe Heatwave Relief Hub | Stay Cool in Extreme Heat 2026">
     <meta name="twitter:description" content="Complete guide to surviving the 2026 European heatwave: no-AC cooling tips, school closure rules, power outage prep, heat health advice, and natural remedies.">
@@ -434,7 +434,6 @@
 
         /* Responsive */
         @media (max-width: 768px) {
-            .nav-links { display: none; }
             .grid, .grid-2, .grid-3, .grid-4 { grid-template-columns: 1fr; }
             .hero h1 { font-size: 2rem; }
             .live-grid { grid-template-columns: repeat(2, 1fr); }
@@ -448,6 +447,37 @@
             background: rgba(0,188,212,0.15); color: var(--ice-8);
             border-radius: 20px; font-size: 0.8rem; font-weight: 600;
             margin: 0.25rem; border: 1px solid rgba(0,188,212,0.2);
+        }
+
+        /* Skip nav */
+        .skip-nav {
+            position: absolute; top: -100px; left: 1rem;
+            background: var(--ice-7); color: white; padding: 0.5rem 1rem;
+            border-radius: 0 0 8px 8px; z-index: 2000; font-weight: 600;
+            transition: top 0.3s;
+        }
+        .skip-nav:focus { top: 0; }
+
+        /* Hamburger */
+        .hamburger { display: none; background: none; border: none; cursor: pointer; flex-direction: column; gap: 5px; padding: 0.5rem; z-index: 1001; }
+        .hamburger span { display: block; width: 24px; height: 2px; background: var(--ice-9); border-radius: 2px; transition: all 0.3s; }
+        .hamburger.active span:nth-child(1) { transform: rotate(45deg) translate(5px, 5px); }
+        .hamburger.active span:nth-child(2) { opacity: 0; }
+        .hamburger.active span:nth-child(3) { transform: rotate(-45deg) translate(5px, -5px); }
+
+        @media (max-width: 768px) {
+            .hamburger { display: flex; }
+            .nav-links {
+                display: flex; flex-direction: column;
+                position: absolute; top: 100%; left: 0; width: 100%;
+                background: var(--glass); backdrop-filter: blur(20px);
+                border-bottom: 1px solid var(--glass-border);
+                padding: 0; max-height: 0; overflow: hidden;
+                transition: max-height 0.4s ease-out, padding 0.4s;
+            }
+            .nav-links.open { max-height: 400px; padding: 1rem 2rem; }
+            .nav-links li { padding: 0.5rem 0; }
+            .lang-switcher { margin-left: 0; }
         }
     </style>
     <!-- FAQ Schema -->
@@ -556,6 +586,7 @@
     </script>
 </head>
 <body>
+    <a href="#top" class="skip-nav">Skip to content</a>
     <div id="bubbles"></div>
     <div class="glow glow-1"></div>
     <div class="glow glow-2"></div>
@@ -563,7 +594,10 @@
 
     <nav id="mainNav">
         <div class="logo"><span class="logo-icon">❄️</span><span data-i18n="nav_logo">Heatwave Hub</span></div>
-        <ul class="nav-links">
+        <button class="hamburger" id="hamburger" aria-label="Toggle navigation menu">
+            <span></span><span></span><span></span>
+        </button>
+        <ul class="nav-links" id="navLinks">
             <li><a href="#noac" data-i18n="nav_noac">No-AC Cooling</a></li>
             <li><a href="#schools" data-i18n="nav_schools">School Closures</a></li>
             <li><a href="#power" data-i18n="nav_power">Power Cuts</a></li>
@@ -634,6 +668,19 @@
                 </div>
             </div>
         </section>
+
+            <!-- Official Sources -->
+            <div style="text-align: center; margin-top: 1rem;">
+                <p style="font-size: 0.8rem; color: var(--ice-8); margin-bottom: 0.5rem;">📡 <strong>Official Sources:</strong></p>
+                <span style="display: inline-flex; flex-wrap: wrap; gap: 0.75rem; justify-content: center;">
+                    <a href="https://www.metoffice.gov.uk/weather/warnings-and-advice/advice-during-hot-weather" target="_blank" rel="noopener" style="color: var(--ice-7); text-decoration: underline; font-size: 0.8rem;">Met Office (UK)</a>
+                    <a href="https://www.dwd.de/DE/leistungen/hitzewarnung/hitzewarnung.html" target="_blank" rel="noopener" style="color: var(--ice-7); text-decoration: underline; font-size: 0.8rem;">DWD (Germany)</a>
+                    <a href="https://meteofrance.com/" target="_blank" rel="noopener" style="color: var(--ice-7); text-decoration: underline; font-size: 0.8rem;">Météo-France</a>
+                    <a href="https://www.who.int/health-topics/heatwaves" target="_blank" rel="noopener" style="color: var(--ice-7); text-decoration: underline; font-size: 0.8rem;">WHO Heat & Health</a>
+                    <a href="https://www.ecdc.europa.eu/en" target="_blank" rel="noopener" style="color: var(--ice-7); text-decoration: underline; font-size: 0.8rem;">ECDC</a>
+                    <a href="https://www.nhs.uk/live-well/seasonal-health/heatwave-how-to-cope-in-hot-weather/" target="_blank" rel="noopener" style="color: var(--ice-7); text-decoration: underline; font-size: 0.8rem;">NHS (UK)</a>
+                </span>
+            </div>
 
         <!-- China Note (shown only for zh) -->
         <div data-i18n="china_note" style="display:none; background: var(--glass); backdrop-filter: blur(20px); border: 1px solid var(--ice-4); border-radius: 16px; padding: 1.5rem; margin-bottom: 2rem; color: var(--ice-9); line-height: 1.8; text-align: left;">
@@ -980,7 +1027,7 @@
         <p style="color: var(--ice-8); margin-bottom: 2rem;" data-i18n="firstaid_desc">Based on WHO & ECDC guidelines. Heatstroke is a medical emergency. Speed of cooling determines survival.</p>
 
         <div class="emergency-banner">
-            <h2 data-i18n="firstaid_em_title">🌡️ Heatstroke (Sunstroke) — Call Emergency Services Immediately</h2>
+            <h3 style="color: #991b1b; margin-bottom: 1rem; font-size: 1.3rem;" data-i18n="firstaid_em_title">🌡️ Heatstroke (Sunstroke) — Call Emergency Services Immediately</h3>
             <p style="color: #7f1d1d; margin-bottom: 1rem;" data-i18n="firstaid_em_desc">Body temperature > 40°C + altered mental state. <strong>Cool first, transport second.</strong> Every minute counts.</p>
             <div class="emergency-grid">
                 <div class="emergency-item">
@@ -2026,6 +2073,20 @@
         const nav = document.getElementById('mainNav');
         if (window.scrollY > 20) nav.classList.add('scrolled');
         else nav.classList.remove('scrolled');
+    });
+
+    // ──────────────────────────────────────
+    // Hamburger menu toggle
+    // ──────────────────────────────────────
+    document.getElementById('hamburger').addEventListener('click', function() {
+        this.classList.toggle('active');
+        document.getElementById('navLinks').classList.toggle('open');
+    });
+    document.querySelectorAll('#navLinks a').forEach(link => {
+        link.addEventListener('click', () => {
+            document.getElementById('hamburger').classList.remove('active');
+            document.getElementById('navLinks').classList.remove('open');
+        });
     });
 
     // ──────────────────────────────────────
